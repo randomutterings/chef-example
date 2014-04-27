@@ -6,6 +6,7 @@ gem 'serverspec'
 gem 'berkshelf'
 gem 'test-kitchen'
 gem 'kitchen-vagrant'
+gem 'kitchen-ec2'
 gem 'unf' # used by fog to escape strings for AWS
 gem 'knife-ec2'
 gem 'rake'
