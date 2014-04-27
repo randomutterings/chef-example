@@ -4,8 +4,12 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 
 require 'rubocop/rake_task'
-desc 'Run RuboCop style checks'
-Rubocop::RakeTask.new(:style)
+desc 'Run Ruby style checks'
+Rubocop::RakeTask.new(:ruby_style)
+
+require 'foodcritic'
+desc 'Run Chef style checks'
+FoodCritic::Rake::LintTask.new(:chef_style)
 
 require 'kitchen'
 desc 'Run Test Kitchen integration tests'
@@ -16,4 +20,4 @@ task :integration do
   end
 end
 
-task default: %w(spec style integration)
+task default: %w(spec ruby_style chef_style integration)
