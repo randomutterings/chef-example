@@ -8,3 +8,4 @@ gem 'test-kitchen'
 gem 'kitchen-vagrant'
 gem 'knife-ec2'
 gem 'rake'
+gem 'rubocop', require: false

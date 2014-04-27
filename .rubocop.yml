@@ -1,0 +1,9 @@
+Encoding:
+  Enabled: false
+
+LineLength:
+  Max: 99
+
+AllCops:
+  Exclude:
+    - metadata.rb
