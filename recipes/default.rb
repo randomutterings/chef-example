@@ -7,3 +7,4 @@
 #
 #
 include_recipe 'nginx::source'
+include_recipe 'redis::install_from_package'
