@@ -2,18 +2,32 @@ Example Chef Cookbook
 ================
 [![Build Status](https://travis-ci.org/randomutterings/chef-example.svg?branch=master)](http://travis-ci.org/randomutterings/chef-example)
 
-Installs redis (from package) and nginx (from source) with the stub status module.
+This example cookbook installs redis (from package) and nginx (from source) with the stub status module.  Support for provisioning an AWS instance is provided thorugh the knife-ec2 plugin.
 
 
-Requirements
-------------
-### Platform
+Supported Platforms
+-------------------
 - Debian/Ubuntu
+
+Prerequisites
+-------------
+To use this cookbook to provision an AWS instance, you must have the following installed and configured.
+
+- Ruby 1.9+
+- Bundler
+- Chef Server
+- Chef Workstation
 
 
 Usage
 -----
-Ensure that the packages are installed and the services are managed with `recipe[chef-example]`.
+1. Clone the git repository from GitHub:
+
+        $ git clone git@github.com:randomutterings/chef-example.git
+
+2. Install the dependencies using bundler:
+
+        $ cd chef-example && bundle install
 
 To provision and converge an ec2 instance, run the following command.  The image used in this example is Ubuntu 12.04 LTS.
 
@@ -23,7 +37,6 @@ To provision and converge an ec2 instance, run the following command.  The image
     --aws-secret-access-key YOUR-AWS-SECRET-ACCESS-KEY \
     --ssh-key YOUR-AWS-SSH-KEY-ID \
     --identity-file /path/to/YOUR-AWS-SSH-KEY \
-    --node-name chef-example \
     --run-list "recipe[chef-example]" \
     --flavor t1.micro \
     --image ami-fd20ad94 \
@@ -32,13 +45,13 @@ To provision and converge an ec2 instance, run the following command.  The image
 
 
 Resources
------
-- [Nginx Cookbook](https://github.com/opscode-cookbooks/nginx)
-- [Redis Cookbook](http://community.opscode.com/cookbooks/redis)
+---------
+- [nginx cookbook](https://github.com/opscode-cookbooks/nginx)
+- [redis cookbook](http://community.opscode.com/cookbooks/redis)
 - [knife config](http://docs.opscode.com/config_rb_knife.html)
 - [knife-ec2](http://docs.opscode.com/plugin_knife_ec2.html)
-
+- [berkshelf](http://berkshelf.com)
 
 Author
------
+------
 - Chris Barnes <randomutterings@gmail.com>

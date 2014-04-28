@@ -51,7 +51,7 @@ Development
 
 2. Install the dependencies using bundler:
 
-        $ bundle install
+        $ cd chef-example && bundle install
 
 3. Create a branch for your changes:
 
