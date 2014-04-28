@@ -29,20 +29,25 @@ Usage
 
         $ cd chef-example && bundle install
 
-To provision and converge an ec2 instance, run the following command.  The image used in this example is Ubuntu 12.04 LTS.
+3. Upload the required cookbooks to your chef server.
 
-    knife ec2 server create \
-    --ssh-user ubuntu \
-    --aws-access-key-id YOUR-AWS-ACCESS-KEY-ID \
-    --aws-secret-access-key YOUR-AWS-SECRET-ACCESS-KEY \
-    --ssh-key YOUR-AWS-SSH-KEY-ID \
-    --identity-file /path/to/YOUR-AWS-SSH-KEY \
-    --run-list "recipe[chef-example]" \
-    --flavor t1.micro \
-    --image ami-fd20ad94 \
-    --region us-east-1 \
-    --distro chef-full
+        $ berks upload
 
+4. Provision and converge an ec2 instance.
+
+        $ knife ec2 server create \
+        --ssh-user ubuntu \
+        --aws-access-key-id YOUR-AWS-ACCESS-KEY-ID \
+        --aws-secret-access-key YOUR-AWS-SECRET-ACCESS-KEY \
+        --ssh-key YOUR-AWS-SSH-KEY-ID \
+        --identity-file /path/to/YOUR-AWS-SSH-KEY \
+        --run-list "recipe[chef-example]" \
+        --flavor t1.micro \
+        --image ami-fd20ad94 \
+        --region us-east-1 \
+        --distro chef-full
+
+  The image used in this example is Ubuntu 12.04 LTS.
 
 Resources
 ---------
