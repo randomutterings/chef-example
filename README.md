@@ -1,5 +1,6 @@
 Example Chef Cookbook
 ================
+[![Build Status](https://travis-ci.org/randomutterings/chef-example.svg?branch=master)](http://travis-ci.org/randomutterings/chef-example)
 
 Installs redis (from package) and nginx (from source) with the stub status module.
 

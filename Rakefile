@@ -20,4 +20,6 @@ task :integration do
   end
 end
 
-task default: %w(spec ruby_style chef_style integration)
+task default: %w(spec ruby_style chef_style)
+
+task all: %w(default integration)

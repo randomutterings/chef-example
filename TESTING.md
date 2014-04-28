@@ -65,6 +65,6 @@ Development
     - `bundle exec foodcritic .`
     - `bundle exec kitchen test`
 
-    For convenience you can run `rake` to execute each test suite in order.
+    For convenience you can run `rake all` to execute each test suite in order.
 
 7. Assuming the tests pass, open a Pull Request on GitHub
